@@ -1,24 +1,79 @@
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f6f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #e1bee7);
+  background-attachment: fixed;
+  color: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
-.container {
-    text-align: center;
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid #b39ddb;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); }
+
+header h1 {
+  font-size: 2.5rem;
+  color: #6a1b9a;
+  margin: 0;
 }
+
+header p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+main {
+  text-align: center;
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 700px;
+}
+
 select {
-    padding: 10px;
-    font-size: 16px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
-#quote-display {
-    margin-top: 20px;
+
+select:hover {
+  border-color: #6a1b9a;
 }
-#quote-image {
-    max-width: 100%;
-    height: auto;
-    display: none;
+
+#quoteContainer {
+  transition: opacity 0.5s ease;
+}
+
+#quoteImg {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+#quoteImg.show {
+  display: block;
+}
+
+#quoteImg:hover {
+  transform: scale(1.02);
 }
