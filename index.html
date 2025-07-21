@@ -6,19 +6,19 @@
 </head>
 <body>
   <h1>Select Your Emotion</h1>
-  <select id="emotionSelect">
+  <select id="emotionSelect" onchange="showQuote()">
     <option value="">--Choose Emotion--</option>
-    <option value="happy">Happy</option>
-    <option value="sad">Sad</option>
-    <option value="angry">Angry</option>
-    <option value="confused">Confused</option>
-    <option value="tired">Tired</option>
-    <option value="overwhelmed">Overwhelmed</option>
-    <option value="calm">Calm</option>
+    <option value="Reflective">Reflective</option>
+    <option value="Self-worth">Self-worth</option>
+    <option value="Wisdom">Wisdom</option>
+    <option value="Growth">Growth</option>
+    <option value="Self-awareness">Self-awareness</option>
+    <option value="Spiritual Awareness">Spiritual Awareness</option>
+    <option value="Trauma">Trauma</option>
   </select>
 
   <div style="margin-top: 20px;">
-    <img id="quoteImage" src="" alt="Your quote will appear here" width="300">
+    <img id="quoteImg" src="" alt="Your quote will appear here" width="300">
   </div>
 
   <script src="script.js"></script>
