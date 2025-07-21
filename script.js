@@ -1,5 +1,6 @@
 const quoteImg = document.getElementById("quoteImg");
 const quoteCounter = document.getElementById("quoteCounter");
+const gallery = document.getElementById("gallery");
 let counter = 0;
 
 const quotes = {
@@ -19,8 +20,25 @@ function showQuote() {
     quoteImg.classList.add("show");
     counter++;
     quoteCounter.innerText = `Quotes viewed: ${counter}`;
+    preloadImages(emotion);
   } else {
     quoteImg.classList.remove("show");
+  }
+}
+
+function preloadImages(emotion) {
+  gallery.innerHTML = "";
+  for (let key in quotes) {
+    if (emotion === key) {
+      const img = document.createElement("img");
+      img.src = quotes[key];
+      img.alt = key;
+      img.onclick = () => {
+        quoteImg.src = quotes[key];
+        quoteImg.classList.add("show");
+      };
+      gallery.appendChild(img);
+    }
   }
 }
 
@@ -33,4 +51,19 @@ function showRandomQuote() {
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
+}
+
+function shareQuote() {
+  const imgSrc = quoteImg.src;
+  if (navigator.share) {
+    navigator.share({
+      title: "Quote Reflection",
+      text: "Check out this quote I'm reflecting on:",
+      url: imgSrc
+    });
+  } else {
+    navigator.clipboard.writeText(imgSrc).then(() => {
+      alert("Quote link copied to clipboard!");
+    });
+  }
 }
