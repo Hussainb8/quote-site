@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Quote Site</title>
-</head>
-<body>
-  <h1>Select Your Emotion</h1>
-  <select id="emotionSelect" onchange="showQuote()">
-    <option value="">--Choose Emotion--</option>
-    <option value="Reflective">Reflective</option>
-    <option value="Self-worth">Self-worth</option>
-    <option value="Wisdom">Wisdom</option>
-    <option value="Growth">Growth</option>
-    <option value="Self-awareness">Self-awareness</option>
-    <option value="Spiritual Awareness">Spiritual Awareness</option>
-    <option value="Trauma">Trauma</option>
-  </select>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Reflection</title>
+  <link rel="stylesheet" href="style.css" /> </head> <body>
+  <header>
+    <h1>Quote Reflection</h1>
+    <p>Select an emotion to view an Islamic quote</p>
+  </header>
 
-  <div style="margin-top: 20px;">
-    <img id="quoteImg" src="" alt="Your quote will appear here" width="300">
-  </div>
+  <main>
+    <select id="emotionSelect" onchange="showQuote()">
+      <option value="">-- Choose Your Emotion --</option>
+      <option value="Reflective">Reflective</option>
+      <option value="Self-worth">Self-worth</option>
+      <option value="Wisdom">Wisdom</option>
+      <option value="Growth">Growth</option>
+      <option value="Self-awareness">Self-awareness</option>
+      <option value="Spiritual Awareness">Spiritual Awareness</option>
+      <option value="Trauma">Trauma</option>
+    </select>
+
+    <div id="quoteContainer">
+      <img id="quoteImg" src="" alt="Quote will appear here" />
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
