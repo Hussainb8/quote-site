@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quote Reflection</title>
-  <link rel="stylesheet" href="style.css" /> </head> <body> <div style="padding: 1pt; border: 2pt solid rgb(156, 101, 0); border-image: none;"><p class="MsoNormal" style="background: rgb(255, 235, 156); line-height: 12pt;"><b><span style="color: rgb(156, 101, 0); font-size: 10pt; mso-fareast-language: EN-GB;">CAUTION:</span></b><span style="color: black; font-size: 10pt; mso-fareast-language: EN-GB;"> This email originated from outside of the organisation. Do not click links or open attachments unless you recognise the sender and know the content is safe.<o:p /></span></p></div>
-
-
-
-
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" /> </head> <body>
   <header>
     <h1>Quote Reflection</h1>
-    <p>Select an emotion to view a quote</p>
+    <p>Select a category to reflect on a quote</p>
+    <div class="controls">
+      <button onclick="toggleDarkMode()">🌓</button>
+      <button onclick="showRandomQuote()">Surprise Me</button>
+    </div>
   </header>
 
   <main>
     <select id="emotionSelect" onchange="showQuote()">
-      <option value="">-- Choose Your Emotion --</option>
+      <option value="">-- Choose Your Category --</option>
       <option value="Reflective">Reflective</option>
       <option value="Self-worth">Self-worth</option>
       <option value="Wisdom">Wisdom</option>
@@ -28,8 +29,10 @@
     </select>
 
     <div id="quoteContainer">
-      <img id="quoteImg" src="" alt="Quote will appear here" />
+      <img id="quoteImg" src="" alt="Your quote will appear here" />
     </div>
+
+    <p id="quoteCounter">Quotes viewed: 0</p>
   </main>
 
   <script src="script.js"></script>
